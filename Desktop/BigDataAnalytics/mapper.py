@@ -1,11 +1,11 @@
 
 
 import sys
-for line in sys.stdin:
+for line in sys.stdin.readlines():
     try: 
         year, tag_words=line.split("\t",1)
         for word in eval(tag_words):
-            print(year+"\t"+word)
+            sys.stdout.write("{}\t{}\n".format(year,word))
     except:
         next
     
